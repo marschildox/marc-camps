@@ -96,7 +96,7 @@ const Index = () => {
               Studio
             </a>
             <a
-              href="https://github.com/malastudio"
+              href="https://github.com/marschildox"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
@@ -148,7 +148,7 @@ const Index = () => {
               variant="outline"
               className="border-border hover:border-primary transition-colors"
             >
-              <a href="https://github.com/malastudio" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/marschildox" target="_blank" rel="noopener noreferrer">
                 <Github className="w-4 h-4 mr-2" />
                 GitHub
               </a>
@@ -350,7 +350,7 @@ const Index = () => {
                 lamalastudio.com
               </a>
               <a 
-                href="https://github.com/malastudio" 
+                href="https://github.com/marschildox" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
