@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/components/ProjectCard";
 import { SkillBadge } from "@/components/SkillBadge";
 import { ExperienceCard } from "@/components/ExperienceCard";
+import { LanguageSelector } from "@/components/LanguageSelector";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
   const projects = [
     {
       title: "LidlMax",
@@ -93,7 +96,7 @@ const Index = () => {
               rel="noopener noreferrer"
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              Studio
+              {t.nav.studio}
             </a>
             <a
               href="https://github.com/marschildox"
@@ -103,6 +106,7 @@ const Index = () => {
             >
               <Github className="w-5 h-5" />
             </a>
+            <LanguageSelector />
           </div>
         </nav>
       </header>
@@ -112,16 +116,14 @@ const Index = () => {
         <div className="max-w-3xl animate-fade-in">
           <div className="mb-6">
             <span className="inline-block px-3 py-1 text-sm font-medium bg-primary/10 text-primary rounded-full border border-primary/20 mb-4">
-              Digital Product & Innovation Lead
+              {t.hero.badge}
             </span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Building strategy-driven products that move the metrics
+            {t.hero.title}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
-            Barcelona-based Product Designer with 10+ years leading multidisciplinary squads. 
-            I anchor initiatives to North Star Metrics, scale quality through DesignOps, 
-            and explore AI-assisted prototyping to accelerate web app development and automate workflows.
+            {t.hero.description}
           </p>
           <div className="flex flex-wrap gap-4 mb-8">
             <Button 
@@ -130,7 +132,7 @@ const Index = () => {
             >
               <a href="mailto:marc.camps.oller@gmail.com">
                 <Mail className="w-4 h-4 mr-2" />
-                Get in Touch
+                {t.hero.cta.contact}
               </a>
             </Button>
             <Button 
@@ -140,7 +142,7 @@ const Index = () => {
             >
               <a href="https://www.linkedin.com/in/marc-ux" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-4 h-4 mr-2" />
-                LinkedIn
+                {t.hero.cta.linkedin}
               </a>
             </Button>
             <Button 
@@ -150,7 +152,7 @@ const Index = () => {
             >
               <a href="https://github.com/marschildox" target="_blank" rel="noopener noreferrer">
                 <Github className="w-4 h-4 mr-2" />
-                GitHub
+                {t.hero.cta.github}
               </a>
             </Button>
           </div>
@@ -161,21 +163,21 @@ const Index = () => {
               href="#about" 
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              About →
+              {t.hero.quickNav.about} →
             </a>
             <span className="text-muted-foreground/30">•</span>
             <a 
               href="#experience" 
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              Experience →
+              {t.hero.quickNav.experience} →
             </a>
             <span className="text-muted-foreground/30">•</span>
             <a 
               href="#projects" 
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
             >
-              Projects →
+              {t.hero.quickNav.projects} →
             </a>
           </div>
           <div className="flex flex-wrap gap-3 items-center text-sm text-muted-foreground">
@@ -195,105 +197,77 @@ const Index = () => {
       {/* About Section */}
       <section id="about" className="container mx-auto px-6 py-16 border-t border-border scroll-mt-20">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-foreground mb-8">About Me</h3>
+          <h3 className="text-3xl font-bold text-foreground mb-8">{t.about.title}</h3>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-6">
               <div>
-                <h4 className="text-xl font-semibold text-foreground mb-4">Background</h4>
+                <h4 className="text-xl font-semibold text-foreground mb-4">{t.about.background.title}</h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  I went from screenprinting to leading multidisciplinary squads — a journey that taught me how to 
-                  anchor every initiative to a North Star Metric, uncover and prioritize opportunities with the 
-                  Opportunity Solution Tree, and scale quality through DesignOps in sync with development.
+                  {t.about.background.text}
                 </p>
               </div>
               <div>
-                <h4 className="text-xl font-semibold text-foreground mb-4">Current Focus</h4>
+                <h4 className="text-xl font-semibold text-foreground mb-4">{t.about.currentFocus.title}</h4>
                 <ul className="space-y-2 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">→</span>
-                    <span>Growth experiments & data-driven storytelling</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">→</span>
-                    <span>Generative AI for discovery and prototyping</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">→</span>
-                    <span>LLM-driven workflows & design automation</span>
-                  </li>
+                  {t.about.currentFocus.items.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-primary mt-1">→</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div>
-                <h4 className="text-xl font-semibold text-foreground mb-4">Beyond Work</h4>
+                <h4 className="text-xl font-semibold text-foreground mb-4">{t.about.beyondWork.title}</h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  I stay a maker at heart: I tattoo minimalist pieces, run{" "}
+                  {t.about.beyondWork.text}{" "}
                   <a 
                     href="https://www.instagram.com/stampa_serigrafia/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="text-primary hover:underline"
                   >
-                    @stampa_serigrafia
+                    {t.about.beyondWork.link}
                   </a>
-                  , and ferment spicy sauces with a punk spirit. That hands-on practice sharpens my eye for detail 
-                  and keeps my iteration fast.
+                  {t.about.beyondWork.text2}
                 </p>
               </div>
             </div>
             <div className="space-y-6">
               <div>
-                <h4 className="text-xl font-semibold text-foreground mb-4">Core Skills</h4>
+                <h4 className="text-xl font-semibold text-foreground mb-4">{t.about.coreSkills.title}</h4>
                 <div className="flex flex-wrap gap-2">
-                  <SkillBadge skill="Technical Project Management" />
-                  <SkillBadge skill="Backend Development" />
-                  <SkillBadge skill="Lean UX" />
-                  <SkillBadge skill="Design Systems" />
-                  <SkillBadge skill="DesignOps" />
-                  <SkillBadge skill="UX Research" />
-                  <SkillBadge skill="Product Strategy" />
-                  <SkillBadge skill="AI-Assisted Design" />
+                  {t.about.coreSkills.skills.map((skill, index) => (
+                    <SkillBadge key={index} skill={skill} />
+                  ))}
                 </div>
               </div>
               <div>
-                <h4 className="text-xl font-semibold text-foreground mb-4">Languages</h4>
+                <h4 className="text-xl font-semibold text-foreground mb-4">{t.about.languages.title}</h4>
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <div className="flex justify-between">
-                    <span>Spanish & Catalan</span>
-                    <span className="text-primary">Native</span>
+                    <span>{t.about.languages.items.spanish.name}</span>
+                    <span className="text-primary">{t.about.languages.items.spanish.level}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>English</span>
-                    <span className="text-primary">Full Professional</span>
+                    <span>{t.about.languages.items.english.name}</span>
+                    <span className="text-primary">{t.about.languages.items.english.level}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>French</span>
-                    <span className="text-primary">Limited Working</span>
+                    <span>{t.about.languages.items.french.name}</span>
+                    <span className="text-primary">{t.about.languages.items.french.level}</span>
                   </div>
                 </div>
               </div>
               <div>
-                <h4 className="text-xl font-semibold text-foreground mb-4">Education</h4>
+                <h4 className="text-xl font-semibold text-foreground mb-4">{t.about.education.title}</h4>
                 <div className="space-y-3 text-sm">
-                  <div>
-                    <p className="font-medium text-foreground">Postgraduate in Business Innovation</p>
-                    <p className="text-muted-foreground">SHIFTA by ELISAVA (May 2025 - November 2025)</p>
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Master's in UX</p>
-                    <p className="text-muted-foreground">La Salle BCN (2016-2017)</p>
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">MA in Web Project Design & Direction</p>
-                    <p className="text-muted-foreground">ELISAVA (2013-2014)</p>
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Estudios Superiores de Diseño Gráfico</p>
-                    <p className="text-muted-foreground">EASD Serra i Abella (2009-2013)</p>
-                  </div>
-                  <div>
-                    <p className="font-medium text-foreground">Realització de Projectes d'Audiovisuals i Espectacles</p>
-                    <p className="text-muted-foreground">IPSI Sant Ignasi Sarria (2007-2009)</p>
-                  </div>
+                  {t.about.education.items.map((item, index) => (
+                    <div key={index}>
+                      <p className="font-medium text-foreground">{item.degree}</p>
+                      <p className="text-muted-foreground">{item.school} {item.period}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -304,114 +278,37 @@ const Index = () => {
       {/* Experience Section */}
       <section id="experience" className="container mx-auto px-6 py-16 border-t border-border scroll-mt-20">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-foreground mb-12">Experience</h3>
+          <h3 className="text-3xl font-bold text-foreground mb-12">{t.experience.title}</h3>
           <div className="space-y-0">
-            <ExperienceCard
-              title="Product Design Team Lead"
-              company="Leadtech Group"
-              period="January 2020 - Present"
-              description={[
-                "Manage and develop a team of designers, setting clear goals and ensuring consistent quality design across multiple product teams",
-                "Utilize UX Research to understand customers and positively affect the design process",
-                "Maintain and evolve Design Language System across all products",
-                "Think strategically about customer needs and business goals alignment",
-                "Advocate for UX within the company and stay current with design trends"
-              ]}
-            />
-            <ExperienceCard
-              title="Senior UX Designer"
-              company="Leadtech Group"
-              period="November 2018 - January 2020"
-              description={[
-                "Analyzed UX problems and created on-brand design solutions meeting measurable business requirements",
-                "Incorporated market analysis, customer feedback, and technical constraints into design",
-                "Identified and prioritized research questions based on product analysis and business needs",
-                "Delivered impact measured by changes to product design and development roadmap"
-              ]}
-            />
-            <ExperienceCard
-              title="Front-end & UX Designer"
-              company="Leadtech Group"
-              period="October 2016 - November 2018"
-              description={[
-                "Developed responsive web interfaces with focus on user experience",
-                "Collaborated with engineering teams to implement design systems"
-              ]}
-            />
-            <ExperienceCard
-              title="Co-Owner"
-              company="Stampa Serigrafia"
-              period="January 2014 - Present"
-              description={[
-                "Textile screen printing workshop in Barcelona specialized in promotional materials",
-                "Manage end-to-end process from concept to delivery with design, illustration, and marketing teams",
-                "Handle production through printing and distribution of final products"
-              ]}
-            />
-            <ExperienceCard
-              title="Freelance Front-end Designer"
-              company="mco"
-              period="September 2013 - October 2016"
-              description={[
-                "Graphic design and corporate identity development",
-                "Web design, UX, and UI implementation",
-                "Screen printing, signage, and photography services"
-              ]}
-            />
-            <ExperienceCard
-              title="Lead UX/UI Designer"
-              company="Wualia"
-              period="November 2014 - September 2016"
-              description={[
-                "Digital project management and development",
-                "Web Design and Responsive Design implementation",
-                "Wireframes and Mockups using Sketch, Photoshop, Illustrator",
-                "Interaction Design with HTML5, CSS3, SASS, JS, Angular"
-              ]}
-            />
-            <ExperienceCard
-              title="Maquetador Web y Diseñador de UX / UI"
-              company="Clouds Partner"
-              period="May 2014 - June 2015"
-              description={[
-                "Web layout and markup",
-                "UX/UI Design for digital platforms"
-              ]}
-            />
-            <ExperienceCard
-              title="Diseñador Gráfico"
-              company="Poble Espanyol De Montjuic S.A.U."
-              period="November 2011 - March 2012"
-              description={[
-                "Graphic design for editorial publications and web",
-                "Corporate identity development",
-                "Event programming and promotion"
-              ]}
-            />
-            <ExperienceCard
-              title="Cámara y Montador de Vídeo"
-              company="Altervideo"
-              period="March 2009 - July 2009"
-              description={[
-                "Video camera and photography for audiovisual productions and events",
-                "Video editing, assembly, and post-production"
-              ]}
-            />
+            {t.experience.jobs.map((job, index) => (
+              <ExperienceCard
+                key={index}
+                title={job.title}
+                company={job.company}
+                period={job.period}
+                description={job.description}
+              />
+            ))}
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
       <section id="projects" className="container mx-auto px-6 py-16 scroll-mt-20">
-        <h3 className="text-3xl font-bold text-foreground mb-12">Selected Projects</h3>
+        <h3 className="text-3xl font-bold text-foreground mb-12">{t.projects.title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {t.projects.items.map((project, index) => (
             <div 
               key={project.title} 
               className="animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'backwards' }}
             >
-              <ProjectCard {...project} />
+              <ProjectCard 
+                title={project.title} 
+                description={project.description} 
+                url={projects[index].url}
+                category={project.category} 
+              />
             </div>
           ))}
         </div>
@@ -421,7 +318,7 @@ const Index = () => {
       <footer className="border-t border-border mt-20">
         <div className="container mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>© 2025 Marc Camps Oller. Built with Lovable.</p>
+            <p>{t.footer.copyright}</p>
             <div className="flex items-center gap-6">
               <a 
                 href="https://lamalastudio.com" 
