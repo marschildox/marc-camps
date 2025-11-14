@@ -252,7 +252,7 @@ const Index = () => {
                 <div className="space-y-3 text-sm">
                   <div>
                     <p className="font-medium text-foreground">Postgraduate in Business Innovation</p>
-                    <p className="text-muted-foreground">SHIFTA by ELISAVA (2025)</p>
+                    <p className="text-muted-foreground">SHIFTA by ELISAVA (May 2025 - November 2025)</p>
                   </div>
                   <div>
                     <p className="font-medium text-foreground">Master's in UX</p>
@@ -261,6 +261,14 @@ const Index = () => {
                   <div>
                     <p className="font-medium text-foreground">MA in Web Project Design & Direction</p>
                     <p className="text-muted-foreground">ELISAVA (2013-2014)</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Estudios Superiores de Diseño Gráfico</p>
+                    <p className="text-muted-foreground">EASD Serra i Abella (2009-2013)</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-foreground">Realització de Projectes d'Audiovisuals i Espectacles</p>
+                    <p className="text-muted-foreground">IPSI Sant Ignasi Sarria (2007-2009)</p>
                   </div>
                 </div>
               </div>
@@ -312,7 +320,57 @@ const Index = () => {
               period="January 2014 - Present"
               description={[
                 "Textile screen printing workshop in Barcelona specialized in promotional materials",
-                "Manage design, illustration, marketing, printing, and distribution processes"
+                "Manage end-to-end process from concept to delivery with design, illustration, and marketing teams",
+                "Handle production through printing and distribution of final products"
+              ]}
+            />
+            <ExperienceCard
+              title="Freelance Front-end Designer"
+              company="mco"
+              period="September 2013 - October 2016"
+              description={[
+                "Graphic design and corporate identity development",
+                "Web design, UX, and UI implementation",
+                "Screen printing, signage, and photography services"
+              ]}
+            />
+            <ExperienceCard
+              title="Lead UX/UI Designer"
+              company="Wualia"
+              period="November 2014 - September 2016"
+              description={[
+                "Digital project management and development",
+                "Web Design and Responsive Design implementation",
+                "Wireframes and Mockups using Sketch, Photoshop, Illustrator",
+                "Interaction Design with HTML5, CSS3, SASS, JS, Angular"
+              ]}
+            />
+            <ExperienceCard
+              title="Maquetador Web y Diseñador de UX / UI"
+              company="Clouds Partner"
+              period="May 2014 - June 2015"
+              description={[
+                "Web layout and markup",
+                "UX/UI Design for digital platforms"
+              ]}
+            />
+            <ExperienceCard
+              title="Diseñador Gráfico"
+              company="Poble Espanyol De Montjuic S.A.U."
+              period="November 2011 - March 2012"
+              description={[
+                "Graphic design for editorial publications and web",
+                "Corporate identity development",
+                "Event programming and promotion"
+              ]}
+            />
+            <ExperienceCard
+              title="Cámara y Montador de Vídeo"
+              company="Altervideo"
+              period="March 2009 - July 2009"
+              description={[
+                "Video camera and photography for audiovisual productions and events",
+                "Video editing, assembly, and post-production"
               ]}
             />
           </div>
