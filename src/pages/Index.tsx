@@ -154,6 +154,30 @@ const Index = () => {
               </a>
             </Button>
           </div>
+          
+          {/* Quick Navigation */}
+          <div className="flex flex-wrap gap-3 mb-8 pt-4 border-t border-border/50">
+            <a 
+              href="#about" 
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              About →
+            </a>
+            <span className="text-muted-foreground/30">•</span>
+            <a 
+              href="#experience" 
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              Experience →
+            </a>
+            <span className="text-muted-foreground/30">•</span>
+            <a 
+              href="#projects" 
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              Projects →
+            </a>
+          </div>
           <div className="flex flex-wrap gap-3 items-center text-sm text-muted-foreground">
             <a href="mailto:marc.camps.oller@gmail.com" className="hover:text-primary transition-colors flex items-center gap-2">
               <Mail className="w-4 h-4" />
@@ -169,7 +193,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section className="container mx-auto px-6 py-16 border-t border-border">
+      <section id="about" className="container mx-auto px-6 py-16 border-t border-border scroll-mt-20">
         <div className="max-w-4xl mx-auto">
           <h3 className="text-3xl font-bold text-foreground mb-8">About Me</h3>
           <div className="grid md:grid-cols-2 gap-12">
@@ -278,7 +302,7 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="container mx-auto px-6 py-16 border-t border-border">
+      <section id="experience" className="container mx-auto px-6 py-16 border-t border-border scroll-mt-20">
         <div className="max-w-4xl mx-auto">
           <h3 className="text-3xl font-bold text-foreground mb-12">Experience</h3>
           <div className="space-y-0">
@@ -378,7 +402,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="container mx-auto px-6 py-16">
+      <section id="projects" className="container mx-auto px-6 py-16 scroll-mt-20">
         <h3 className="text-3xl font-bold text-foreground mb-12">Selected Projects</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
